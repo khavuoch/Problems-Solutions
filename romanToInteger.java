@@ -13,7 +13,6 @@ public int romanToInt(String s) {
     for(int i = 0; i < s.length(); i++){
         char value = s.charAt(i);
         System.out.print(map.get(value));
-        //result += (int)map.get(value);
         if(value == 'I'){
             if((i+1 < s.length()) && (s.charAt(i+1) == 'V' || s.charAt(i+1) == 'X')){
                 result += (int)map.get(s.charAt(i+1)) - (int)map.get(value);
