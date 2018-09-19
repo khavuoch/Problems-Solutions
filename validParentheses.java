@@ -9,23 +9,21 @@ public boolean isValid(String s) {
 
         if(ch == '(' || ch == '[' || ch == '{')
             stack.push(ch);
-        //else if(!stack.isEmpty()){
-            else if(ch == ')'){
-                if(!stack.isEmpty() && stack.peek() == '(')
-                    stack.pop();
-                else return false;
-            }
-            else if(ch == ']'){
-                if(!stack.isEmpty() && stack.peek() == '[')
-                    stack.pop();
-                else return false;
-            }
-            else if(!stack.isEmpty() && ch == '}'){
-                if(stack.peek() == '{')
-                    stack.pop();
-                else return false;
-            }
-        //}else return stack.isEmpty();
+        else if(ch == ')'){
+            if(!stack.isEmpty() && stack.peek() == '(')
+                stack.pop();
+            else return false;
+        }
+        else if(ch == ']'){
+            if(!stack.isEmpty() && stack.peek() == '[')
+                stack.pop();
+            else return false;
+        }
+        else if(!stack.isEmpty() && ch == '}'){
+            if(stack.peek() == '{')
+                stack.pop();
+            else return false;
+        }
     }
     return stack.isEmpty();
 }
